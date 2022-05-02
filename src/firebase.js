@@ -6,6 +6,7 @@ import {
   getFirestore,
   query,
   getDocFromCache,
+  addDoc,
 } from "firebase/firestore";
 
 const firebaseConfig = {
@@ -20,7 +21,8 @@ const firebaseConfig = {
   measurementId: "G-PQ1EZ838YR",
 };
 
-export const app = initializeApp(firebaseConfig);
+export const app =
+  getApps().length === 0 ? initializeApp(firebaseConfig) : getApp();
 
 export const db = getFirestore(app);
 

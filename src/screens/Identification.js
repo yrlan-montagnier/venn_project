@@ -43,10 +43,6 @@ function Identification({ navigation }) {
       setError(!found);
       if (found) {
         setColor(found.favoriteColor);
-        console.log("Trouvé");
-      }
-      if (!found) {
-        console.log("pas trouvé");
       }
     }
   };
@@ -55,7 +51,6 @@ function Identification({ navigation }) {
   };
   const onNavigateToRegister = () => {
     navigation.navigate("CreateMember");
-    console.log("Bouton Register");
   };
   const header = (
     <View style={styles.header}>
@@ -91,7 +86,7 @@ function Identification({ navigation }) {
             <Text style={styles.error}>Désolé, tu n'es pas enregistré·e.</Text>
           </View>
           <View style={styles.actions}>
-            <Button title="S'enregistrer" />
+            <Button title="Créer un compte" onPress={onNavigateToRegister} />
           </View>
         </View>
       </View>

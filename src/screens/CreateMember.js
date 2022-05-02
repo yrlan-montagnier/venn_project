@@ -57,6 +57,7 @@ function CreateMember({ navigation }) {
   const Create = () => {
     const value = newFirstname + " " + newLastname;
     if (value.length > 0 && data?.length > 0) {
+      console.log("test");
       const found = data.find(({ lastname, firstname }) =>
         value.match(
           new RegExp(
@@ -72,6 +73,7 @@ function CreateMember({ navigation }) {
           favoriteColor: color.toLowerCase().trim(),
         });
         successModal();
+        navigation.navigate("Identification");
       } else {
         errorModal();
       }

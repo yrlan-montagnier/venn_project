@@ -3,8 +3,9 @@ import { View, ScrollView, StyleSheet, Text } from "react-native";
 import Avatar from "../components/Avatar";
 import Button from "../components/Button";
 import useGetAll from "../hooks/useGetAll";
+import Identification from "./Identification";
 
-function Members() {
+function Members({ navigation }) {
   const { loading, error, data } = useGetAll("members");
   if (loading) {
     return (

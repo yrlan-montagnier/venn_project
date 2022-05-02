@@ -2,8 +2,10 @@ import { Button, View, Text, StyleSheet, FlatList } from "react-native";
 
 import useGetAll from "../hooks/useGetAll";
 import Project from "./Project";
+import useRotationColor from "../hooks/useRotationColor";
 
-function Projects({ navigation }) {
+function Projects({ navigation, firstname, lastname }) {
+  const color = useRotationColor();
   const { loading, error, data } = useGetAll("projects");
   const CreateProject = () => {
     navigation.navigate("CreateProject");
